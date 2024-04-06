@@ -4,10 +4,10 @@
 
 Spring Framework에서의 **IoC**(Inversion of Control, 제어의 역전) 원칙의 구현인 **Spring IoC 컨테이너**와 **Bean**.
 
-**DI**(Dependency Injection, 의속성 주입)은 IoC의 특수한 형태로, 객체가 생성자 인수, factory method 인수 또는 factory method에서 가져온 후 객체 인스턴스에 설정된 속성을 통해서만 의존성(즉, 함께 작업하는 다른 객체)을 정의하는 것이다. 그런 다음 IoC 컨테이너는 이러한 의존성을 bean을 생성할 때 주입한다.
+**DI**(Dependency Injection, 의존성 주입)은 IoC의 특수한 형태로, 객체가 생성자 인수, factory method 인수 또는 factory method에서 가져온 후 객체 인스턴스에 설정된 속성을 통해서만 의존성(즉, 함께 작업하는 다른 객체)을 정의하는 것이다. 그런 다음 IoC 컨테이너는 이러한 의존성을 bean을 생성할 때 주입한다.
 (이 과정은 bean 자체가 의존성의 인스턴스화 또는 위치를 제어하는 것-클래스의 직접 구성 또는 Service Locator 패턴과 같은 매커니즘을 통해-과 근본적으로 반대이다.)
 
-`org.springframework.beans`와 `org.springframework.`context` 패키지는 SpringFramework의 IoC 컨테이너의 기초이다.
+`org.springframework.beans`와 `org.springframework.context` 패키지는 SpringFramework의 IoC 컨테이너의 기초이다.
 BeanFactory 인터페이스는 모든 유형의 객체를 관리할 수 있는 고급 구성 메커니즘을 제공한다.
 ApplicationContext는 BeanFatory의 하위 인터페이스이다. ApplicationContext가 추가하는 것들:
 * Spring의 AOP 기능과 더 쉽게 통합 가능
@@ -52,7 +52,7 @@ Spring 구성은 컨테이너가 관리해야 하는 하나 이상의 빈 정의
 #### Using the Container
 
 ## 레퍼런스
-https://docs.spring.io/spring-framework/reference/core/beans/introduction.html
+https://docs.spring.io/spring-framework/reference/core/beans/introduction.html <br>
 https://docs.spring.io/spring-framework/reference/core/beans/basics.html
 
 ## QnA
