@@ -56,4 +56,6 @@ https://docs.spring.io/spring-framework/reference/core/beans/introduction.html <
 https://docs.spring.io/spring-framework/reference/core/beans/basics.html
 
 ## QnA
----
+| 질문: Maven, Gradle을 설정하는 것이 IoC 컨테이너 설정과 관련이 있는지? (Maven의 pom.xml이 XML 형식인 것이 연관이 있는지?)
+* Spring Boot에서 Maven혹은 Gradle을 설정하는 것은 프로젝트 빌드 관리 도구를 결정하는 것으로, IoC 컨테이너 설정과는 관계 없다.
+* IoC 컨테이너를 설정하는 방식에 XML 기반 설정, Java 코드(JavaConfig) 기반 설정, 어노테이션 기반 설정이 있다. Spring Boot 애플리케이션에서 @SpringBootApplication 어노테이션을 붙이는 것이 바로 세 번째 방식을 사용하는 것이다. @SpringBootApplication 어노테이션이 붙은 클래스는 Spring Boot 애플리케이션의 진입점이 되며, ApplicationContext(IoC 컨테이너)가 해당 클래스가 있는 패키지와 하위 패키지의 컴포넌트들을 스캔해서 Spring Bean으로 등록한다.
