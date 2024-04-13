@@ -8,7 +8,7 @@
 
 ### 클래스 레벨에 @Builder 사용 시 @AllArgsConstructor 붙이는 이유
 * @Builder를 붙인 클래스에 생성자가 없다면 @Builder는 @AllArgsConstructor(access = AccessLevel.PACKAGE) 생성자를 만든다.
-* 그러나 @ArgsConstructor를 붙여 기본생성자를 만들면 Builder는 자동으로 생성자를 만들지 않는다. 전체 필드를 받는 생성자가 필요하다면 이 어노테이션을 붙여야 한다. 
+* 그러나 생성자가 있다면 Builder는 자동으로 생성자를 만들지 않는다. 전체 필드를 받는 생성자가 필요하다면 이 어노테이션을 붙여주어야 한다. 
 
 ### 어떻게 작성해야 좋을까?
 우선 클래스 레벨에 @NoArgsConstructor(AccessLevel.PROTECTED)를 쓴다.
