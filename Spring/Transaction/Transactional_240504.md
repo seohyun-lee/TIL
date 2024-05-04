@@ -10,9 +10,27 @@
 - `@EnableTransactionManagement`: Spring 애플리케이션에서 트랜잭션 관리를 활성화하는 애노테이션. (`@SpringBootApplication` 애노테이션에 포함되어 있다.)
 ### 3. 주로 Service 클래스 또는 메서드에 @Transactional을 붙이는 이유
 - Transaction이 필요한 것은 주로 비즈니스 로직이 실행되는 메서드이다. 이 때문에 @Transactional을 서비스 클래스나 서비스 클래스의 메서드에 붙이는 것이 일반적이다.
+
+```java
+@Transactional(readOnly = true)
+public class DefaultFooService implements FooService {
+
+	public Foo getFoo(String fooName) {
+		// ...
+	}
+
+	// 메서드의 설정이 우선순위가 높다
+	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
+	public void updateFoo(Foo foo) {
+		// ...
+	}
+}
+```
+
 ### 4. @Transactional의 롤백 시점
 - 기본적으로 롤백은 UnCheckedException(RuntimeException)과 Error에 대해 발생한다. CheckedException은 롤백이 진행되지 않는다.
 - 따라서 CheckedException에 대해서도, 즉 모든 예외에 대해 롤백하고 싶다면 `rollbackFor = {Exception.class}` 설정이 필요하다.
+
 ### 5. @Transactional의 추가 설정
 - 전파 유형, 격리 수준, 읽기 전용(readOnly=true) 등을 설정할 수 있다.
 ![image](https://github.com/seohyun-lee/TIL/assets/32611398/5684788c-bb3d-4d57-a053-4fc318b5b186)
