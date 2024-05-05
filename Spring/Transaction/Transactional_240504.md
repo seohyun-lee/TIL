@@ -40,3 +40,8 @@ public class DefaultFooService implements FooService {
 https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/annotations.html#transaction-declarative-annotations-method-visibility
 https://www.baeldung.com/transaction-configuration-with-jpa-and-spring
 https://javatute.com/spring/transactional-rollbackfor-example-using-spring-boot/
+
+
+## QnA
+Q. CheckedException에 대해서 롤백을 진행하는 경우가 어떤 경우인가요? CheckedException 중 컴파일 에러는 컴파일 단계에서 잡히지 않나요?
+A. 커스텀 체크 예외를 (RuntimeException을 상속받지 않게) 정의해서 사용하는 경우, 외부 시스템과 통신이 실패한 경우, 데이터베이스 제약 조건을 위반한 경우 등이 있습니다. 이러한 경우에도 트랜잭션을 롤백시켜야 하기에, rollbackFor = {Exception.class}를 설정해 주면 좋습니다.
