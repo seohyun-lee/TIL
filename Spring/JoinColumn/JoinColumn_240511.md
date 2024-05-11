@@ -16,13 +16,14 @@
 - 그외 파라미터들: foreignKey, unique, nullable, updatable
 <br>
 개발 시 @ManyToOne(name="") 애노테이션을 붙여야 한 이유를 더 이해하게 되었다. 기본 컬럼명 설정값이 member_member_id여서.
-> @JoinColumn을 지정하지 않으면 조인 테이블 전략을 활용한다는데 이와 관련해 더 알아봐야 할 것 같다.
 
 ### 2. mappedBy 옵션
-양방향 매핑을 할 때 참조 측에서 사용한다. 참조 측은 단순히 소유 측에 매핑된다. @OneToMany, @OneToOne 애노테이션을 쓸 때 같이 사용한다. <br>
+양방향 매핑을 할 때 참조 측에서 사용한다. 이때 참조 측은 단순히 소유 측에 매핑된다. @OneToMany, @OneToOne 애노테이션을 쓸 때 같이 사용한다. <br>
 양방향 관계에서 두 객체가 서로 연결되면 서로를 변경하려 할 수 있는 문제점이 있다. <br>
 mappedBy는 한 테이블 중 하나의 테이블만 관리할 수 있도록 정하는 것이다. MappedBy가 정의되지 않은 객체가 연관관계의 주인이다.
 
+#### 조인 테이블 전략
+양방향인데 mappedBy로 FK 필드를 지정하지 않은 경우, @JoinTable을 붙인 경우 A_B라는 이름으로 조인 테이블을 만든다.
 
 ## 레퍼런스
 - https://www.baeldung.com/jpa-join-column
